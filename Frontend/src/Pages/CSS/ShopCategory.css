@@ -21,8 +21,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         margin-top: 25px;
+        margin-bottom: 25px;
         row-gap: 27px;
-        margin-left: 25px;
+        margin-left: 130px;
+        margin-right: 130px;
 }
 
 
