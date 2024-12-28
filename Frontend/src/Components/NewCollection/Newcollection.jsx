@@ -7,7 +7,7 @@ import Item from '../Item/Item'
   const [new_collection,setNew_collection] = useState([]);
 
   useEffect(()=>{
-    fetch('http://https://shopper-yrl3.onrender.com/newcollections')
+    fetch('http://http://localhost:3000/newcollections')
     .then((response)=>response.json())
     .then((data)=>setNew_collection(data));
   },[])
