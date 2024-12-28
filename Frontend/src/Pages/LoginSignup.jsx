@@ -18,7 +18,7 @@ import './CSS/LoginSignup.css'
   const login = async () =>{
     console.log("Login Function Executed",formData);
     let responseData;
-    await fetch('http://http://localhost:3000/login',{
+    await fetch('https://shopper-yrl3.onrender.com/login',{
       method:'POST',
       headers: {
         Accept:'application/form-data',
@@ -39,7 +39,7 @@ import './CSS/LoginSignup.css'
   const signup = async () =>{
     console.log("Sign Up Function Executed",formData);
     let responseData;
-    await fetch('http://http://localhost:3000/signup',{
+    await fetch('https://shopper-yrl3.onrender.com/signup',{
       method:'POST',
       headers:{
         Accept:'application/form-data',
