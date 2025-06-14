@@ -1,4 +1,4 @@
-/** import React from 'react'
+/* import React from 'react'
 import './Item.css'
 import { Link } from 'react-router-dom'
 
@@ -30,15 +30,12 @@ import { Link } from 'react-router-dom';
 const Item = (props) => {
   console.log(props, "4545454");
 
-  // Backend URL
-  const backendURL = "https://shopper-b.onrender.com";
-
   return (
     <div className='item'>
       <Link to={`/product/${props.id}`}>
         <img 
           onClick={() => window.scrollTo(0, 0)} 
-          src={`${backendURL}/images/${props.image}`}  
+          src={props.image}   // ✅ Use direct URL
           alt="" 
         />
       </Link>
