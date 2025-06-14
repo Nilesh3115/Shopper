@@ -1,4 +1,4 @@
-const port = process.env.PORT || 3000;
+const baseUrl = process.env.BASE_URL || `http://localhost:${port}`;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -47,12 +47,10 @@ app.use('/images', express.static('upload/images'));
 }); */
 
 app.post("/upload", upload.single('product'), (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ success: 0, message: 'No file uploaded' });
-    }
+    
     res.json({
         success: 1,
-        image_url: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+        image_url: `${baseUrl}/images/${req.file.filename}`
     });
 });
 
@@ -227,7 +225,7 @@ app.post('/getcart', fetchUser, async (req, res) => {
 });
 
 // Start Server
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+app.listen(baseUrl, () => {
+    console.log(`Server running on port ${baseUrl}`);
 });
 
