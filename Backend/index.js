@@ -1,3 +1,4 @@
+const port = 3000;
 const baseUrl = process.env.BASE_URL || `http://localhost:${port}`;
 const express = require("express");
 const app = express();
