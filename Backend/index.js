@@ -1,5 +1,7 @@
-const port = 3000;
-const baseUrl = process.env.BASE_URL || `http://localhost:${port}`;
+const port = process.env.PORT || 3000; // Render uses dynamic port
+const baseUrl = process.env.NODE_ENV === 'production'
+  ? 'https://shopper-b.onrender.com'
+  : `http://localhost:${port}`;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -226,7 +228,7 @@ app.post('/getcart', fetchUser, async (req, res) => {
 });
 
 // Start Server
-app.listen(baseUrl, () => {
-    console.log(`Server running on port ${baseUrl}`);
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
 
