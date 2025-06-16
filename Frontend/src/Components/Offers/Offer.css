@@ -1,6 +1,5 @@
 .offers{    
-    margin-left: 150px;
-    margin-right: 50px;
+    margin: 0px auto 5% auto;
     width: 65%;
     height: 60vh;
     display: flex;
